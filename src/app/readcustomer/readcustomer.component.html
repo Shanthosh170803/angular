@@ -1,0 +1,21 @@
+<div class="table-container">
+  <table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="clickable" *ngFor="let cust of customer">
+        <td>{{cust.id}}</td>
+        <td>{{cust.name}}</td>
+        <td>
+          <a class="btn btn-primary btn-sm" style="margin-right: 10px;" routerLink="/updatecustomer/{{cust.id}}" routerLinkActive="active">Edit</a>
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

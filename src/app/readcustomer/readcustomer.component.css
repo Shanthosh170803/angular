@@ -1,0 +1,21 @@
+.table-container {
+    width: 80%; /* Set a desired width for the table container */
+    margin: 20px auto; /* Center the table horizontally with some margin */
+    padding: 10px;
+    border: 1px solid #ccc; /* Add a light border */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #f9f9f9; /* Light background for the container */
+  }
+  
+  .table th,
+  .table td {
+    text-align: center; /* Center-align text in table cells */
+    vertical-align: middle; /* Align text vertically in the middle */
+  }
+  
+  .table th {
+    background-color: #4CAF50; /* Give a green shade to header */
+    color: white; /* White text for better contrast */
+  }
+  
