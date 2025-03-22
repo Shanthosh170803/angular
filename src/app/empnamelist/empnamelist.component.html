@@ -1,0 +1,15 @@
+<p>empnamelist works!</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Employees Names</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+   
+          <td>{{emp.ename}}</td>
+      </tr>
+    </tbody>
+  </table>

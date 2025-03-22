@@ -1,0 +1,129 @@
+<p>empadd works!</p>
+
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <div class="mb-3">
+    <div class="form-group">
+      <label for="ename" class="col-sm-2 col-form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="employee.ename"
+        id="ename"
+        name="ename"
+        #ename="ngModel"
+        pattern="^[a-zA-Z\s]{1,15}$"
+        required
+      />
+    </div>
+    <span
+      *ngIf="ename.invalid && ename.touched"
+      class="error form-control-feedback"
+      >Enter your Name</span>
+    <pre class="info">
+          Valid? {{ ename.valid }} 
+          Touched? {{ ename.touched }}
+          UnTouched? {{ ename.untouched }}
+          Dirty? {{ ename.dirty }}
+          Pristine? {{ ename.pristine }}
+     </pre>
+
+    <div class="form-group">
+      <label for="email" class="col-sm-2 col-form-label">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="employee.email"
+        id="email"
+        name="email"
+        #email="ngModel"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,3}$"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password" class="col-sm-2 col-form-label">Password</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="employee.password"
+        id="password"
+        name="password"
+        #password="ngModel"
+        required
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$"
+        minlength="6"
+      />
+    </div>
+    <div class="error form-control-feedback">
+      <span *ngIf="password.errors && (password.touched)">Password is required</span>
+      <span *ngIf="password.errors && (password.touched || password.dirty)" >Password requires minimum 6 characters </span>
+    </div>
+    <fieldset class="row mb-3">
+      <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="gender1"
+            [(ngModel)]="employee.gender"
+            value="Male"
+            checked
+          />
+          <label class="form-check-label" for="gender"> Male </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="gender2"
+            [(ngModel)]="employee.gender"
+            value="Female"
+          />
+          <label class="form-check-label" for="gender"> Female </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="row mb-3">
+      <legend class="col-form-label col-sm-2 pt-0">Married</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="ismarried"
+            id="ismarried"
+            [(ngModel)]="employee.ismarried"
+            value="false"
+            checked
+          />
+          <label class="form-check-label" for="ismarried"> Single </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="ismarried"
+            id="ismarried"
+            [(ngModel)]="employee.ismarried"
+            value="true"
+          />
+          <label class="form-check-label" for="ismarried"> Married </label>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group">
+      <button
+        (click)="addEmployee()"
+        [disabled]="!myForm.form.invalid"
+        type="submit"
+        class="btn btn-primary"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</form>

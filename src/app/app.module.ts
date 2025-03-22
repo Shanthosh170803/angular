@@ -3,20 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreatecustomerComponent } from './createcustomer/createcustomer.component';
-import {HttpClientModule} from '@angular/common/http';
+import { EmpnamelistComponent } from './empnamelist/empnamelist.component';
+import { HttpClientModule} from '@angular/common/http';
+import { EmpService } from './emp.service';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { EmpaddComponent } from './empadd/empadd.component';
 import { HomeComponent } from './home/home.component';
-import { UpdatecustomerComponent } from './updatecustomer/updatecustomer.component';
-import { ReadcustomerComponent } from './readcustomer/readcustomer.component';
-import { CustomerService } from './customer.service';
+import { EmplistComponent } from './emplist/emplist.component';
 import { FormsModule } from '@angular/forms';
+import { EmpeditComponent } from './empedit/empedit.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CreatecustomerComponent,
+    EmpnamelistComponent,
+    AboutusComponent,
+    ContactusComponent,
+    EmpaddComponent,
     HomeComponent,
-    UpdatecustomerComponent,
-    ReadcustomerComponent
+    EmplistComponent,
+    EmpeditComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [CustomerService],
+  providers: [EmpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

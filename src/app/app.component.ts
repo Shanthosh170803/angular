@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CustomerService } from './customer.service';
+import { EmpService } from './emp.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,12 @@ import { CustomerService } from './customer.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'customer';
-  customer:any=[];
-  constructor(private customerservice : CustomerService){}
+  title = 'emspro';
+  employees: any=[];
+  constructor(private empservice: EmpService){}
 
-  ngOnInit() {
-    this.customer = this.customerservice
-      .getAllCustomer()
-      .subscribe((cust) => (this.customer = cust));
-    console.log(this.customer);
+  ngOnInit(){
+    this.employees=this.empservice.getAllEmployees().subscribe((emp)=>(this.employees=emp));
+    console.log(this.employees);
   }
 }
